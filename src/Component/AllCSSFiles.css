@@ -231,6 +231,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.075);
   padding-top: 20px;
   position: relative;
+  overflow: hidden;
 }
 
 .TickerChart .ChartData {
