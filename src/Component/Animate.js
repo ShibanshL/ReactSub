@@ -10,7 +10,7 @@ const collapseDiv = () => {
 
   let timeFrame = document.querySelectorAll(".TickerTimeFrame button");
 
-  buttonCollapse.addEventListener("touch", () => {
+  buttonCollapse.addEventListener("touchstart", () => {
     i++;
 
     if (i % 2 != 0) {
@@ -40,18 +40,18 @@ const popupMenuNavbar = () => {
 
   let popUpMenu = document.querySelector(".PopOver .popOverOptions");
 
-  navButtn.addEventListener("click", () => {
+  navButtn.addEventListener("touchstart", () => {
     popUp.style.opacity = 1;
     popUp.style.left = "0%";
   });
 
-  popUp.addEventListener("click", () => {
+  popUp.addEventListener("touchstart", () => {
     popUp.style.opacity = 0;
     popUp.style.left = "100%";
   });
 };
 
-window.addEventListener("load", () => {
+window.addEventListener("deviceready", () => {
   collapseDiv();
   popupMenuNavbar();
 });
