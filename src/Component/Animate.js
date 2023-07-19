@@ -10,7 +10,7 @@ const collapseDiv = () => {
 
   let timeFrame = document.querySelectorAll(".TickerTimeFrame button");
 
-  buttonCollapse.addEventListener("touchstart", () => {
+  buttonCollapse.addEventListener("pointerdown", () => {
     i++;
 
     if (i % 2 != 0) {
