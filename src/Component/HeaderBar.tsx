@@ -13,11 +13,9 @@ function HeaderBar() {
       <div className="HeaderBar">
         <img src={Left} alt="" />
         <label htmlFor="#">BitCoin Wallet</label>
-        {/* <button> */}
         <div>
           <img src={ThreeDot} className="ThreeDot" alt="" />
         </div>
-        {/* </button> */}
       </div>
 
       <div className="PopOver">
