@@ -10,8 +10,18 @@ const collapseDiv = () => {
 
   let timeFrame = document.querySelectorAll(".TickerTimeFrame button");
 
-  buttonCollapse.addEventListener("click", () => {
+  let test = document.querySelectorAll(".TickerOptions .buySellOptions label");
+
+  buttonCollapse.addEventListener("touchstart", (e) => {
     i++;
+
+    e.currentTarget.addEventListener("click", () => {
+      for (let j = 0; j < test.length; j++) {
+        test[0].innerHTML = "working";
+      }
+      console.log("I got it");
+    });
+    e.stopPropagation();
 
     if (i % 2 != 0) {
       for (let j = 0; j < timeFrame.length; j++) {
@@ -51,7 +61,7 @@ const popupMenuNavbar = () => {
   });
 };
 
-window.addEventListener("deviceready", () => {
+window.addEventListener("load", () => {
   collapseDiv();
   popupMenuNavbar();
 });

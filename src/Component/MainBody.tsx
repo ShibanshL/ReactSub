@@ -5,9 +5,7 @@ import BitCoin from "../assets/SVG/BitCoin.svg";
 import EThereum from "../assets/SVG/Ethereum.svg";
 import Binance from "../assets/SVG/Binance.svg";
 import LiteCoin from "../assets/SVG/Lite.svg";
-
 import { Tooltip, Area, AreaChart } from "recharts";
-
 import "./Animate.js";
 import { data, data1, data2, data3 } from "./AllData.js";
 
