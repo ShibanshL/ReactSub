@@ -195,14 +195,12 @@
 }
 
 .TickerInfo .HiddentParts {
-  /* display: none; */
   height: 10vh;
   width: 70vw;
   position: absolute;
   bottom: 0vh;
   justify-content: space-between;
   z-index: 2;
-  /* background: pink; */
 }
 
 .HiddentParts button {
@@ -239,11 +237,6 @@
   position: relative;
   z-index: 1;
 }
-
-/* .timeFrame:hover {
-  background: #adb7c3;
-  color: white;
-} */
 
 .timeFrameClicked {
   background: gray;
