@@ -24,7 +24,9 @@ function MainBody() {
     Higher: 5.743,
   });
 
-  const [height, setHeight] = useState(false);
+  const [heightChanged, setHeightCheanged] = useState(false);
+
+  const [buttonClicked, setButtonClicked] = useState("Day");
 
   const buttonName = [
     {
@@ -127,11 +129,11 @@ function MainBody() {
   };
 
   const collapseDiv = () => {
-    if (height) {
-      setHeight(false);
+    if (heightChanged) {
+      setHeightCheanged(false);
     }
-    if (!height) {
-      setHeight(true);
+    if (!heightChanged) {
+      setHeightCheanged(true);
     }
   };
 
@@ -143,7 +145,7 @@ function MainBody() {
           onClick={() => {
             collapseDiv();
           }}
-          style={height ? { height: "35vh" } : { height: "25vh" }}
+          style={heightChanged ? { height: "35vh" } : { height: "25vh" }}
         >
           <div className="TickerTop">
             <div>
@@ -170,24 +172,32 @@ function MainBody() {
           <button>
             <img
               src={Left}
-              style={height ? { rotate: "90deg" } : { rotate: "-90deg" }}
+              style={heightChanged ? { rotate: "90deg" } : { rotate: "-90deg" }}
             />
           </button>
         </div>
         <div
           className="TickerTimeFrame"
-          style={height ? { zIndex: 0 } : { zIndex: 1 }}
+          style={heightChanged ? { zIndex: 0 } : { zIndex: 1 }}
         >
-          {buttonName.map((e: any) => {
+          {buttonName.map((val: any) => {
             return (
               <>
                 <button
-                  key={e.id}
+                  key={val.id}
                   className="timeFrame"
-                  value={e.name}
-                  onClick={(e: any) => changeTickerData(e.target.value)}
+                  value={val.name}
+                  onClick={(e: any) => {
+                    changeTickerData(e.target.value);
+                    setButtonClicked(val.name);
+                  }}
+                  style={
+                    buttonClicked == val.name
+                      ? { background: "#adb7c3", color: "white" }
+                      : { background: "none", color: "#adb7c3" }
+                  }
                 >
-                  {e.name}
+                  {val.name}
                 </button>
               </>
             );
