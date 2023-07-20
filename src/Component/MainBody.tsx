@@ -6,7 +6,7 @@ import EThereum from "../assets/SVG/Ethereum.svg";
 import Binance from "../assets/SVG/Binance.svg";
 import LiteCoin from "../assets/SVG/Lite.svg";
 import { Tooltip, Area, AreaChart } from "recharts";
-import "./Animate.js";
+// import "./Animate.js";
 import { data, data1, data2, data3 } from "./AllData.js";
 
 function MainBody() {
@@ -23,6 +23,8 @@ function MainBody() {
     Lower: 4.896,
     Higher: 5.743,
   });
+
+  const [height, setHeight] = useState(false);
 
   const buttonName = [
     {
@@ -124,10 +126,25 @@ function MainBody() {
     }
   };
 
+  const collapseDiv = () => {
+    if (height) {
+      setHeight(false);
+    }
+    if (!height) {
+      setHeight(true);
+    }
+  };
+
   return (
     <>
       <div className="MainBody">
-        <div className="TickerInfo">
+        <div
+          className="TickerInfo"
+          onClick={() => {
+            collapseDiv();
+          }}
+          style={height ? { height: "35vh" } : { height: "25vh" }}
+        >
           <div className="TickerTop">
             <div>
               {dynamicTickerData(metaData.imgSRC)}
@@ -151,10 +168,16 @@ function MainBody() {
             </div>
           </div>
           <button>
-            <img src={Left} />
+            <img
+              src={Left}
+              style={height ? { rotate: "90deg" } : { rotate: "-90deg" }}
+            />
           </button>
         </div>
-        <div className="TickerTimeFrame">
+        <div
+          className="TickerTimeFrame"
+          style={height ? { zIndex: 0 } : { zIndex: 1 }}
+        >
           {buttonName.map((e: any) => {
             return (
               <>

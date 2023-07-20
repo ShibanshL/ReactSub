@@ -1,4 +1,5 @@
 // import ThreeDot from "../assets/threeDot.svg";
+import { useState } from "react";
 
 import Left from "../assets/SVG/Left.svg";
 import ThreeDot from "../assets/SVG/ThreeDot.svg";
@@ -8,17 +9,29 @@ import Remove from "../assets/SVG/Remove.svg";
 import Info from "../assets/SVG/Info.svg";
 
 function HeaderBar() {
+  const [clicked, setClicked] = useState(false);
   return (
     <>
       <div className="HeaderBar">
         <img src={Left} alt="" />
         <label htmlFor="#">Bitcoin Wallet</label>
         <div>
-          <img src={ThreeDot} className="ThreeDot" alt="" />
+          <img
+            src={ThreeDot}
+            className="ThreeDot"
+            alt=""
+            onClick={() => setClicked(true)}
+          />
         </div>
       </div>
 
-      <div className="PopOver">
+      <div
+        className="PopOver"
+        onClick={() => setClicked(false)}
+        style={
+          clicked ? { opacity: 1, left: "0%" } : { opacity: 0, left: "100%" }
+        }
+      >
         <div className="popOverOptions">
           <div>
             <label>Edit</label>
