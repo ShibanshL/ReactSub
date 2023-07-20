@@ -12,6 +12,7 @@
 .TickerTop,
 .TickerBottom,
 .TickerBottomBadge,
+.HiddentParts,
 .TickerChart,
 .ChartData,
 .TopData,
@@ -96,6 +97,7 @@
   top: 12vh;
   left: 8vw;
   padding-bottom: 5px;
+  overflow: hidden;
 }
 
 .TickerInfo .TickerTop {
@@ -177,7 +179,7 @@
   transition: 0.5s ease;
 }
 
-.TickerInfo button {
+.TickerInfo .collapseIMG {
   height: 5vh;
   width: 80%;
   background: none;
@@ -187,9 +189,36 @@
   bottom: 10px;
 }
 
-.TickerInfo button img {
+.TickerInfo .collapseIMG img {
   rotate: -90deg;
   width: 8vw;
+}
+
+.TickerInfo .HiddentParts {
+  /* display: none; */
+  height: 10vh;
+  width: 70vw;
+  position: absolute;
+  bottom: 0vh;
+  justify-content: space-between;
+  z-index: 2;
+  /* background: pink; */
+}
+
+.HiddentParts button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1ec070;
+  width: 10vh;
+  height: 5vh;
+  border-radius: 25px;
+  color: white !important;
+  transition: 50ms ease;
+}
+
+.HiddentParts button:last-child {
+  background: #ee225d;
 }
 
 .MainBody .TickerTimeFrame {
@@ -401,6 +430,13 @@
 
 .popOverOptions div:last-child {
   border-bottom: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.popOverOptions div:first-child {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .popOverOptions div:last-child label {
@@ -437,5 +473,116 @@
   }
   to {
     rotate: -20deg;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .MainBody {
+    overflow: hidden;
+  }
+
+  .HeaderBar {
+    justify-content: space-between;
+  }
+
+  .HeaderBar img {
+    display: none;
+  }
+
+  .HeaderBar .ThreeDot {
+    display: block;
+    width: 2vw;
+  }
+
+  .TickerInfo {
+    width: 30vw !important;
+    height: 35vh !important;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .TickerTop {
+    top: 1vh !important;
+    left: 2vw !important;
+    position: none;
+    width: 60%;
+    padding: 0;
+    padding-top: 5px;
+  }
+
+  .TickerTop div img {
+    width: 3vw;
+  }
+
+  .TickerBottom {
+    height: 10vh;
+    max-height: 10vh;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 11vh !important;
+    left: 2vw !important;
+    width: 86% !important;
+  }
+
+  .collapseIMG {
+    display: none;
+  }
+
+  .TickerTimeFrame {
+    width: 48vw !important;
+    margin-top: 38.5vh !important;
+    justify-content: space-between !important;
+  }
+
+  .BottomNavBar {
+    display: none;
+  }
+
+  .HiddentParts {
+    margin-top: 20vh;
+  }
+
+  .MainBody {
+    flex-direction: row;
+  }
+
+  .TickerOptions {
+    position: absolute;
+    left: 8vw !important;
+    bottom: 15vw !important;
+    width: 30% !important;
+  }
+
+  .TickerOptions div img {
+    width: 4vw;
+  }
+
+  .TickerChart {
+    margin-top: 2vh;
+    height: 57vh !important;
+    padding: 0;
+  }
+
+  .ChartData {
+    height: 100%;
+    width: 100%;
+  }
+
+  .TopData .Lower label,
+  .TopData .Higher label {
+    font-size: 1.5em;
+  }
+
+  .BottomData {
+    margin-top: 30vh;
+  }
+
+  .BottomData label {
+    font-size: 2.3em;
+  }
+
+  .popOverOptions {
+    width: 25vw !important;
   }
 }

@@ -18,7 +18,7 @@
   background: rgb(58, 58, 58);
 }
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
   .NotPhone {
     display: flex;
     align-items: center;
@@ -27,4 +27,4 @@
   .Phone {
     display: none;
   }
-}
+} */

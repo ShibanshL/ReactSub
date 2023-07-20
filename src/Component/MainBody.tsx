@@ -137,6 +137,15 @@ function MainBody() {
     }
   };
 
+  const hiddenButton = () => {
+    if (heightChanged) {
+      return { bottom: "2vh" };
+    }
+    if (!heightChanged) {
+      return { bottom: "-20vh" };
+    }
+  };
+
   return (
     <>
       <div className="MainBody">
@@ -169,12 +178,17 @@ function MainBody() {
               </div>
             </div>
           </div>
-          <button>
+
+          <button className="collapseIMG">
             <img
               src={Left}
               style={heightChanged ? { rotate: "90deg" } : { rotate: "-90deg" }}
             />
           </button>
+          <div className="HiddentParts" style={hiddenButton()}>
+            <button style={{ color: "black" }}>Buy</button>
+            <button style={{ color: "black" }}>Sell</button>
+          </div>
         </div>
         <div
           className="TickerTimeFrame"
@@ -261,11 +275,11 @@ function MainBody() {
         <div className="TickerOptions">
           <div className="buySellOptions">
             <img src={Dollar} alt="" />
-            <label>Buy BTC</label>
+            <label>Buy {metaData.tickSymbol}</label>
           </div>
           <div className="buySellOPtions">
             <img src={Dollar} alt="" />
-            <label>Sell BTC</label>
+            <label>Sell {metaData.tickSymbol}</label>
           </div>
         </div>
       </div>
