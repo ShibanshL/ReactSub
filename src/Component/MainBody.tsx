@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Left from "../assets/SVG/Left.svg";
 import Dollar from "../assets/SVG/Dollar.svg";
 import BitCoin from "../assets/SVG/BitCoin.svg";
@@ -6,7 +6,6 @@ import EThereum from "../assets/SVG/Ethereum.svg";
 import Binance from "../assets/SVG/Binance.svg";
 import LiteCoin from "../assets/SVG/Lite.svg";
 import { Tooltip, Area, AreaChart } from "recharts";
-// import "./Animate.js";
 import { data, data1, data2, data3 } from "./AllData.js";
 
 function MainBody() {
@@ -137,12 +136,32 @@ function MainBody() {
     }
   };
 
+  const [winDimensions, setWinDimensions] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight,
+  });
+
+  const detectSize = () => {
+    setWinDimensions({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    });
+
+    useEffect(() => {
+      window.addEventListener("resize", detectSize);
+
+      return window.addEventListener("resize", detectSize);
+    }, [winDimensions]);
+  };
+
   const hiddenButton = () => {
-    if (heightChanged) {
-      return { bottom: "2vh" };
-    }
-    if (!heightChanged) {
-      return { bottom: "-20vh" };
+    if (winDimensions.winWidth < 700) {
+      if (heightChanged) {
+        return { bottom: "2vh" };
+      }
+      if (!heightChanged) {
+        return { bottom: "-20vh" };
+      }
     }
   };
 

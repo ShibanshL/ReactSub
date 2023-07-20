@@ -533,7 +533,9 @@
   }
 
   .HiddentParts {
-    margin-top: 20vh;
+    margin-top: 5vh !important;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 
   .MainBody {
@@ -543,17 +545,17 @@
   .TickerOptions {
     position: absolute;
     left: 8vw !important;
-    bottom: 15vw !important;
+    bottom: 14vw !important;
     width: 30% !important;
   }
 
   .TickerOptions div img {
-    width: 4vw;
+    width: 3vw;
   }
 
   .TickerChart {
     margin-top: 2vh;
-    height: 57vh !important;
+    height: 60vh !important;
     padding: 0;
   }
 
