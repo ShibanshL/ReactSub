@@ -186,7 +186,9 @@ function MainBody() {
             </div>
             <div className="BottomData">
               <div></div>
-              <label>1 BTC = ${metaData.oneCoin}</label>
+              <label>
+                1 {metaData.tickSymbol} = ${metaData.oneCoin}
+              </label>
             </div>
           </div>
           <AreaChart

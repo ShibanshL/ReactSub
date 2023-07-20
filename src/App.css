@@ -8,6 +8,7 @@
   max-width: 100%;
   transition: 1s ease;
   font-family: "Roboto", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .NotPhone {

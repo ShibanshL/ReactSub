@@ -12,7 +12,7 @@ function HeaderBar() {
     <>
       <div className="HeaderBar">
         <img src={Left} alt="" />
-        <label htmlFor="#">BitCoin Wallet</label>
+        <label htmlFor="#">Bitcoin Wallet</label>
         <div>
           <img src={ThreeDot} className="ThreeDot" alt="" />
         </div>
