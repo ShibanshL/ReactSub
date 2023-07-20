@@ -5,7 +5,7 @@ function PC_Main() {
     <>
       <div className="PC_Main">
         <img src={Mobile} alt="" />
-        <h1> Please go back to Mobile mode!! </h1>
+        <h1> Please go back to Mobile or Potrait mode!! </h1>
       </div>
     </>
   );
